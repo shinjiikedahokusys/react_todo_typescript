@@ -1,0 +1,94 @@
+body {
+  font-family: sans-serif;
+}
+
+input {
+  border-radius: 16px;
+  border: none;
+  margin-right: 13px;
+  padding: 6px 16px;
+  outline: none;
+  width: 225px;
+}
+
+li div {
+  display: flex;
+}
+
+span {
+  display: inline-block;
+  margin-right: auto;
+  line-height: 32px;
+}
+
+button {
+  border-radius: 16px;
+  border-color: #fa8072;
+  padding: 4px 16px;
+  display: inline-block;
+}
+
+.back-button {
+  margin-right: 62.67px;
+}
+
+button:hover {
+  background-color: #fa8072;
+  color: #fff;
+  cursor: pointer;
+}
+.complete-button:hover {
+  background-color: #87ceeb;
+  color: #fff;
+  cursor: pointer;
+}
+.delete-button:hover {
+  background-color: #ad4a3e;
+  color: #fff;
+  cursor: pointer;
+}
+.back-button:hover {
+  background-color: #90ee90;
+  color: #fff;
+  cursor: pointer;
+}
+
+.input-area {
+  background-color: #fffacd;
+  width: 400px;
+  height: 30px;
+  padding: 8px;
+  margin: 8px;
+  border-radius: 8px;
+}
+.incomplete-area {
+  background-color: #90ee90;
+  width: 400px;
+  min-height: 200px;
+  padding: 8px;
+  margin: 8px;
+  border-radius: 8px;
+}
+.complete-area {
+  background-color: #87ceeb;
+  width: 400px;
+  min-height: 200px;
+  padding: 8px;
+  margin: 8px;
+  border-radius: 8px;
+}
+.title {
+  text-align: start;
+  margin-top: 0;
+  font-weight: bold;
+  color: #000000;
+}
+.list-row {
+  align-items: center;
+  padding: 4px;
+}
+
+p.caution {
+  color: red;
+  margin-left: 16px;
+}
