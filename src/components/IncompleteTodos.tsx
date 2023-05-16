@@ -2,8 +2,8 @@ import React from "react";
 
 export const IncompleteTodos = (props: {
   todos: string[];
-  onClickComplete: any;
-  onClickDelete: any;
+  onClickComplete: (index: number) => void;
+  onClickDelete: (index: number) => void;
 }) => {
   const { todos, onClickComplete, onClickDelete } = props;
   return (

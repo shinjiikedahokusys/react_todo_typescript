@@ -2,9 +2,9 @@ import React from "react";
 
 export const InputTodo = (props: {
   todoText: string;
-  onChange: any;
-  onClick: any;
-  disabled: any;
+  onChange: React.ChangeEventHandler<HTMLInputElement>;
+  onClick: React.MouseEventHandler<HTMLButtonElement>;
+  disabled: boolean;
 }) => {
   const { todoText, onChange, onClick, disabled } = props;
   return (

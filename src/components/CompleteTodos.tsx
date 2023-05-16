@@ -2,8 +2,8 @@ import React from "react";
 
 export const CompleteTodos = (props: {
   todos: string[];
-  onClickBack: any;
-  onClickClear: any;
+  onClickBack: (index: number) => void;
+  onClickClear: () => void;
 }) => {
   const { todos, onClickBack, onClickClear } = props;
   return (
@@ -24,6 +24,7 @@ export const CompleteTodos = (props: {
                     onClick={() => onClickBack(index)}
                   >
                     戻す
+                    {typeof onClickBack}
                   </button>
                 </div>
               </li>
