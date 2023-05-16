@@ -1,12 +1,16 @@
 import React from "react";
 
-export const IncompleteTodos = (props) => {
+export const IncompleteTodos = (props: {
+  todos: string[];
+  onClickComplete: any;
+  onClickDelete: any;
+}) => {
   const { todos, onClickComplete, onClickDelete } = props;
   return (
     <div className="incomplete-area">
       <p className="title">未完了のTODO</p>
       <ul>
-        {todos.map((todo, index) => {
+        {todos.map((todo: string, index: number) => {
           return (
             <>
               {" "}

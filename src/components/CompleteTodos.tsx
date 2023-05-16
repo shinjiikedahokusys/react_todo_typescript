@@ -1,6 +1,10 @@
 import React from "react";
 
-export const CompleteTodos = (props) => {
+export const CompleteTodos = (props: {
+  todos: string[];
+  onClickBack: any;
+  onClickClear: any;
+}) => {
   const { todos, onClickBack, onClickClear } = props;
   return (
     <>
@@ -10,7 +14,7 @@ export const CompleteTodos = (props) => {
           完了TODOのクリア
         </button>
         <ul>
-          {todos.map((todo, index) => {
+          {todos.map((todo: string, index: number) => {
             return (
               <li className="list-row" key={index}>
                 <div>

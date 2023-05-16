@@ -1,6 +1,11 @@
 import React from "react";
 
-export const InputTodo = (props) => {
+export const InputTodo = (props: {
+  todoText: string;
+  onChange: any;
+  onClick: any;
+  disabled: any;
+}) => {
   const { todoText, onChange, onClick, disabled } = props;
   return (
     <div className="input-area">

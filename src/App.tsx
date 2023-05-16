@@ -7,26 +7,28 @@ import { CompleteTodos } from "./components/CompleteTodos";
 
 export const App = () => {
   const [todoText, setTodoText] = useState("");
-  const [incompleteTodos, setIncompleteTodos] = useState([]);
-  const [completeTodos, setCompleteTodos] = useState([]);
+  const [incompleteTodos, setIncompleteTodos] = useState<string[]>([]);
+  const [completeTodos, setCompleteTodos] = useState<string[]>([]);
 
-  const onChangeTodoText = (event) => setTodoText(event.target.value);
+  const onChangeTodoText = (event: {
+    target: { value: React.SetStateAction<string> };
+  }) => setTodoText(event.target.value);
   const onClickAdd = () => {
     console.log("onclickAddボタン");
     // alert(todoText);
     if (todoText === "") return;
-    const newTodos = [...incompleteTodos, todoText];
+    const newTodos: string[] = [...incompleteTodos, todoText];
     setIncompleteTodos(newTodos);
     setTodoText("");
   };
 
-  const onClickDelete = (index) => {
+  const onClickDelete = (index: number) => {
     const newTodos = [...incompleteTodos];
     newTodos.splice(index, 1);
     setIncompleteTodos(newTodos);
   };
 
-  const onClickComplete = (index) => {
+  const onClickComplete = (index: number) => {
     const newIncompleteTodos = [...incompleteTodos];
     newIncompleteTodos.splice(index, 1);
 
@@ -35,7 +37,7 @@ export const App = () => {
     setCompleteTodos(newCompleteTodos);
   };
 
-  const onClickBack = (index) => {
+  const onClickBack = (index: number) => {
     const newCompleteTodos = [...completeTodos];
     newCompleteTodos.splice(index, 1);
 
@@ -47,7 +49,7 @@ export const App = () => {
   const onClickClear = () => {
     const clear = window.confirm("完了したTODOを全て削除しますか？");
     if (clear) {
-      const newCompleteTodos = [];
+      const newCompleteTodos: string[] = [];
       setCompleteTodos(newCompleteTodos);
       console.log("クリア");
     } else {
@@ -64,7 +66,9 @@ export const App = () => {
         disabled={incompleteTodos.length >= 5}
       />
       {incompleteTodos.length >= 5 && (
-        <p class="caution">登録できるtodoが5個までです。消化してください。</p>
+        <p className="caution">
+          登録できるtodoが5個までです。消化してください。
+        </p>
       )}
       <IncompleteTodos
         todos={incompleteTodos}
@@ -72,7 +76,7 @@ export const App = () => {
         onClickDelete={onClickDelete}
       />
       {completeTodos.length >= 10 && (
-        <p class="caution">
+        <p className="caution">
           完了したTODが"10個"になりました。不要なTODOを削除、または戻すなどの対応をしてください。
         </p>
       )}
@@ -84,3 +88,5 @@ export const App = () => {
     </>
   );
 };
+
+// export export const App
